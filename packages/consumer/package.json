@@ -1,0 +1,9 @@
+{
+  "name": "waifu-consumer",
+  "packageManager": "yarn@3.5.0",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "waifu-pieces": "workspace:^"
+  }
+}
