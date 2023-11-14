@@ -1,6 +1,6 @@
 {
   "name": "waifu-interactions",
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@4.0.2",
   "version": "0.0.1",
   "type": "module",
   "main": "src/index.js",
