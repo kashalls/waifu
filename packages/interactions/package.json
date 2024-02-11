@@ -8,7 +8,7 @@
   "license": "Unlicensed",
   "dependencies": {
     "@skyra/env-utilities": "^1.1.0",
-    "@skyra/http-framework": "^0.15.3",
+    "@skyra/http-framework": "^2.0.0",
     "dotenv": "^16.0.3"
   },
   "devDependencies": {
