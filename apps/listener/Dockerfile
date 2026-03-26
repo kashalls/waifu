@@ -1,6 +1,6 @@
 # Build from the workspace root:
 #   docker build -f apps/listener/Dockerfile -t waifu-listener .
-FROM golang:1.24-alpine AS builder
+FROM golang:1.26-alpine AS builder
 WORKDIR /workspace
 
 # Copy workspace manifest so Go can resolve all modules.
