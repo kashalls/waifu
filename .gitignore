@@ -11,8 +11,6 @@ bin/
 *.out
 dist/
 
-# Go workspace
-go.work.sum
 
 # Environment files
 .env
@@ -29,6 +27,6 @@ go.work.sum
 .DS_Store
 Thumbs.db
 
-# Binaries
-ingestor
-listener
+# Compiled binaries (root-level only)
+/ingestor
+/listener
