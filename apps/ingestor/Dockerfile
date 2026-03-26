@@ -2,14 +2,15 @@
 #   docker build -f apps/ingestor/Dockerfile -t waifu-ingestor .
 FROM golang:1.24-alpine AS builder
 WORKDIR /workspace
+# Each Dockerfile builds one app; disable workspace mode so Go does not
+# try to load the other app's go.mod. The replace directive in go.mod
+# handles the local pkg/event dependency.
+ENV GOWORK=off
 
-# Copy workspace manifest so Go can resolve all modules.
-COPY go.work go.work.sum ./
-
-# Cache dependency downloads.
+# Cache dependency downloads before copying source.
 COPY pkg/event/go.mod ./pkg/event/
 COPY apps/ingestor/go.mod apps/ingestor/go.sum ./apps/ingestor/
-RUN cd apps/ingestor && GOWORK=off go mod download
+RUN go mod download -C apps/ingestor
 
 # Copy source and build.
 COPY pkg/event/ ./pkg/event/
