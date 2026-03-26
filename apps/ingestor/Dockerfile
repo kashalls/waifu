@@ -9,7 +9,7 @@ COPY go.work go.work.sum ./
 # Cache dependency downloads.
 COPY pkg/event/go.mod ./pkg/event/
 COPY apps/ingestor/go.mod apps/ingestor/go.sum ./apps/ingestor/
-RUN go mod download -modfile apps/ingestor/go.mod
+RUN cd apps/ingestor && go mod download
 
 # Copy source and build.
 COPY pkg/event/ ./pkg/event/

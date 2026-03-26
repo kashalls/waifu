@@ -9,7 +9,7 @@ COPY go.work go.work.sum ./
 # Cache dependency downloads.
 COPY pkg/event/go.mod ./pkg/event/
 COPY apps/listener/go.mod apps/listener/go.sum ./apps/listener/
-RUN go mod download -modfile apps/listener/go.mod
+RUN cd apps/listener && go mod download
 
 # Copy source and build.
 COPY pkg/event/ ./pkg/event/
