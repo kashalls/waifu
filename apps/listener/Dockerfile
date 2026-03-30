@@ -10,12 +10,12 @@ ENV GOWORK=off
 # Cache dependency downloads before copying source.
 COPY pkg/event/go.mod ./pkg/event/
 COPY apps/listener/go.mod apps/listener/go.sum ./apps/listener/
-RUN go mod download -C apps/listener
+RUN cd apps/listener && go mod download
 
 # Copy source and build.
 COPY pkg/event/ ./pkg/event/
 COPY apps/listener/ ./apps/listener/
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /listener ./apps/listener
+RUN cd apps/listener && CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /listener .
 
 FROM alpine:3.21
 RUN apk --no-cache add ca-certificates tzdata
