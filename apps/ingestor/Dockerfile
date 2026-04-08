@@ -17,7 +17,7 @@ COPY pkg/event/ ./pkg/event/
 COPY apps/ingestor/ ./apps/ingestor/
 RUN cd apps/ingestor && CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /ingestor .
 
-FROM alpine:3.21
+FROM alpine:3.23
 RUN apk --no-cache add ca-certificates tzdata
 WORKDIR /app
 
