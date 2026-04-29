@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/kashalls/waifu/pkg/event v0.0.0-00010101000000-000000000000
-	github.com/redis/go-redis/v9 v9.7.0
+	github.com/redis/go-redis/v9 v9.7.3
 )
 
 require (
