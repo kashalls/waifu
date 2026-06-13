@@ -1,6 +1,6 @@
 # Build from the workspace root:
 #   docker build -f apps/listener/Dockerfile -t waifu-listener .
-FROM golang:1.24-alpine AS builder
+FROM golang:1.26-alpine AS builder
 WORKDIR /workspace
 # Each Dockerfile builds one app; disable workspace mode so Go does not
 # try to load the other app's go.mod. The replace directive in go.mod
