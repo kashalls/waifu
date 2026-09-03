@@ -5,7 +5,7 @@ go 1.24
 require (
 	github.com/bwmarrin/discordgo v0.29.0
 	github.com/kashalls/waifu/pkg/event v0.0.0-00010101000000-000000000000
-	github.com/redis/go-redis/v9 v9.20.1
+	github.com/redis/go-redis/v9 v9.22.0
 )
 
 require (
